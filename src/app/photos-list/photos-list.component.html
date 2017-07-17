@@ -3,4 +3,5 @@
 
 <div *ngFor="let photo of childPhotos.photos" class=”photo”>
   <img src={{photo.img_src}} alt="" />
+  <button (click)="saveImage(photo, childPhotos.photos[0].camera.name, childPhotos.photos[0].earth_date)">Save Photo</button>
 </div>
