@@ -13,6 +13,9 @@ import { UserPhotosListComponent } from './user-photos-list/user-photos-list.com
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { PublicComponent } from './public/public.component';
 import { PrivateComponent } from './private/private.component';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthenticationService } from './authentication/authentication.service';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -39,7 +42,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthGuardService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
